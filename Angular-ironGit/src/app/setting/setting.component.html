@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="text-center primary "> Choose your reposit </h1>
+  <form>
+    <div class="form-group">
+      <label> owner</label>
+      <input type="text" class="form-control" name="owner" [(ngModel)]="owner">
+      <label> repo</label>
+      <input type="text" class="form-control" name="repo" [(ngModel)]="repo">
+    </div>
+    <button class="btn btn-success" (click)="saveForm()">Find Issues</button>
+  </form>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>User</th>
+        <th>State</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let issue of issues | paginate: { id: 'listing_pagination',
+      itemsPerPage:4,
+      currentPage: page,
+      totalItems : totalRecords}
+      ">
+        <td> {{issue.title}} </td>
+        <td><a [href]=issue.user.html_url target="_blank">{{issue.user.login}}
+            <img [src]="issue.user.avatar_url+'&s=80'" alt="profile"></a>
+        </td>
+        <td>{{issue.state}}</td>
+        <td>{{issue.body}}<br>
+          <a [href]=issue.html_url target="_blank">See more >>></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event">
+    </pagination-controls>
+  </div>
+</div>

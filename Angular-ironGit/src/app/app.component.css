@@ -1,0 +1,13 @@
+.container{
+    margin-top: 3%;
+}
+h1{
+    font-size: 5vw;
+}
+img{
+    height: 7%;
+    width: 6%;
+}
+.logo{
+    display: flex;
+}
